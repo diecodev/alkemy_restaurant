@@ -1,5 +1,7 @@
-export function MenuItem({plato}) {
+import Recipe from "./Recipe";
+
+export function MenuItem({plato, remove}) {
   return (
-    <div>{plato}</div>
+    <Recipe recipe={plato} remove={remove} />
   )
 }

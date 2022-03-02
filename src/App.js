@@ -2,7 +2,9 @@ import { createContext } from "react"
 import Hero from "./components/Hero";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import SpecificRecipe from "./components/SpecificRecipe";
+import NotFound from "./components/NotFound";
 
 export const Context = createContext({
   token: "no token yet.",
@@ -30,7 +32,9 @@ function App() {
         setPlatos
       }}>
         <Routes>
-          <Route path="/" element={ token === "" ? <Login /> : <Hero/> } />
+          <Route path="/" element={ window.localStorage.getItem("token") ? <Hero/> : <Login /> } />
+          <Route path="recipe/:recipeId" element={ window.localStorage.getItem("token") ? <SpecificRecipe /> : <Navigate to="/" /> } />
+          <Route path="*" element={ <NotFound /> } />
         </Routes>
       </PlatosContext.Provider>
     </Context.Provider>

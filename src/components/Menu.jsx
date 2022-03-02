@@ -1,21 +1,22 @@
 import { useContext } from "react"
 import { MenuItem } from "./MenuItem"
 import { PlatosContext } from "../App"
-import NoArticlesMenu from "./NoArticlesMenu";
+import "./styles/recipes.css"
 
 export default function Menu() {
   const { platos } = useContext(PlatosContext);
 
-  if(platos){
+  if(platos.length == 0 || !platos){
     return (
-      <>
-        {platos.map((p, i) => <MenuItem key={i} plato={p} />)}
-      </>
+      <div style={{color: "grey"}}><i>No hay items agregados al menú...</i></div>
     )
   }
-  if(!platos){
+
+  if(platos){
     return (
-      <NoArticlesMenu />
+      <div className="menuItemsCtn">
+        {platos.map(p => <MenuItem key={p.id} plato={p} remove={true} />)}
+      </div>
     )
   }
 }
