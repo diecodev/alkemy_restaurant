@@ -55,7 +55,7 @@ export default function Recipe({recipe, remove=false}) {
         {diets.map(feature => <span key={feature} className="feature">{feature}</span>)}
       </div>
       {!remove && <button onClick={handleAddToMenu} className="addToMenuBtn">Añadir al menú</button>}
-      {remove && <button onClick={handleRemoveFromMenu} className="removeFromMenuBtn">Eliminar del menú</button>}
+      {remove && <button style={{backgroundColor: 'rgba(255, 0,0)'}} onClick={handleRemoveFromMenu} className="addToMenuBtn">Eliminar del menú</button>}
     </div>
   )
 }
