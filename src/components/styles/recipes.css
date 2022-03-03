@@ -40,7 +40,8 @@ section{
 .anchor{
     text-decoration: none;
     transition: all 500ms ease;
-    color: #242424
+    color: #242424;
+    cursor: pointer;
 }
 
 .anchor:hover{

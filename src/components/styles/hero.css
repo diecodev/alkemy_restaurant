@@ -7,6 +7,14 @@ main{
     gap: 10px;
 }
 
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    align-items: center;
+}
+
 .menuCtn{
     width: min(1200px, 90%);
     display: flex;

@@ -1,5 +1,4 @@
 import "./styles/recipes.css"
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { PlatosContext } from "../App";
@@ -47,9 +46,9 @@ export default function Recipe({recipe, remove=false}) {
   return (
     <div className="recipeItem">
       <img src={image} alt={title} />
-      <Link className="anchor" to={`/recipe/${id}`}>
+      <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer" className="anchor" >
         <h3>{title}</h3>
-      </Link>
+      </a>
       <div>
         <h4 className="features">Características: </h4>
         {diets.map(feature => <span key={feature} className="feature">{feature}</span>)}
