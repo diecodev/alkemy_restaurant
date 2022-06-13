@@ -1,0 +1,21 @@
+div.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    padding: 2em;
+    box-shadow: 0 0px 35px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    width: min(90%, 450px);
+
+    legend {
+      font-size: 1.3em;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+}
